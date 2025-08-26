@@ -11,12 +11,12 @@ define("OCUPACION", "Estudiante de Desarrollo de Software");
 
 // Creación de mensaje usando diferentes métodos de concatenación e impresión
 $mensaje1 = "Hola, mi nombre es " . $nombre . " y tengo " . $edad . " años.";
-$mensaje2 = "Mi correo es $correo y soy " . OCUPACION . ".";
+$mensaje2 = "Mi correo es $correo y numero de telefono $telefono, y soy " . OCUPACION . ".";
 
 echo $mensaje1 . "<br>";
 print($mensaje2 . "<br>");
 
-printf("En resumen: %s, %d años, %s, %s<br>", $nombre, $edad, $cocrreo, OCUPACION);
+printf("En resumen: %s, %d años, %s, %s<br>", $nombre, $edad, $correo, OCUPACION);
 
 echo "<br>Información de debugging:<br>";
 var_dump($nombre);
