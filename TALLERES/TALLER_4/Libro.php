@@ -43,3 +43,4 @@ class Libro {
 $miLibro = new Libro("  El Quijote  ", "Miguel de Cervantes", "1605");
 echo $miLibro->obtenerInformacion();
 echo "\nTítulo: " . $miLibro->getTitulo();
+        
