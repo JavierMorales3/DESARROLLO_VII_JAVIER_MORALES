@@ -1,0 +1,16 @@
+[
+  {
+    "nombre": "Javier Morales",
+    "email": "javier.catst@gmail.com",
+    "fechanacimiento": "2002-04-21",
+    "sitioWeb": "https://www.php.net/",
+    "genero": "masculino",
+    "comentarios": "Estoy probando nuevas cosas en php.",
+    "intereses": [
+      "deportes",
+      "musica"
+    ],
+    "edad": 23,
+    "foto_perfil": "uploads/Breath_of_the_Wild___MBs_Collection.jpg"
+  }
+]
