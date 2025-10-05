@@ -7,8 +7,18 @@ function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-function validarEdad($edad) {
-    return is_numeric($edad) && $edad >= 18 && $edad <= 120;
+function validarFechanacimiento($fecha) {
+
+    $hoy = new DateTime();
+    $fechaNac = DateTime::createFromFormat('Y-m-d', $fecha);
+
+    if (!$fechaNac || $fechaNac->format('Y-m-d') !== $fecha) {
+        return false;
+    }
+
+    $edad = $hoy->diff($fechaNac)->y;
+
+    return $edad >= 18 && $edad <= 120;
 }
 
 function validarSitioWeb($sitioWeb) {
@@ -29,7 +39,7 @@ function validarComentarios($comentarios) {
     return strlen($comentarios) <= 500;
 }
 
-function validarFotoPerfil($archivo) {
+function validarFotoPerfil($archivo, $rutaDestinoBase = 'uploads/') {
     $tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
     $tamanoMaximo = 1 * 1024 * 1024; // 1MB
 
@@ -45,7 +55,12 @@ function validarFotoPerfil($archivo) {
         return false;
     }
 
+    $nombreArchivo = basename($archivo['name']);
+    $rutaCompleta = $rutaDestinoBase . $nombreArchivo;
+    if (file_exists($rutaCompleta)) {
+        return false;
+    }
+
     return true;
 }
 ?>
-        
