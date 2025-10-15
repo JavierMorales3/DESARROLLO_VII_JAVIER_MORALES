@@ -1,18 +1,15 @@
 <?php
 include 'config_sesion.php';
 
-$productos = [
-    1 => ['nombre' => 'Laptop', 'precio' => 1200.00],
-    2 => ['nombre' => 'Monitor', 'precio' => 300.00],
-    3 => ['nombre' => 'Teclado', 'precio' => 90.00],
-    4 => ['nombre' => 'Mouse', 'precio' => 20.00],
-    5 => ['nombre' => 'Audifonos', 'precio' => 50.00],
-];
+$json_data = file_get_contents('productos.json');
+$productos = json_decode($json_data, true) ?? [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_producto = filter_input(INPUT_POST, 'id_producto', FILTER_VALIDATE_INT);
+    
+    $id_producto_int = filter_input(INPUT_POST, 'id_producto', FILTER_VALIDATE_INT);
+    $id_producto = ($id_producto_int !== false && $id_producto_int !== null) ? (string)$id_producto_int : null;
 
-    if ($id_producto !== false && $id_producto !== null && array_key_exists($id_producto, $productos)) {
+    if ($id_producto !== null && array_key_exists($id_producto, $productos)) {
         if (!isset($_SESSION['carrito'])) {
             $_SESSION['carrito'] = [];
         }
@@ -32,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: productos.php?error=producto_invalido');
         exit;
     }
-
 
 }
 ?>
