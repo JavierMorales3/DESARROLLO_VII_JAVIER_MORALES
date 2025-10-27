@@ -42,7 +42,7 @@ CREATE TABLE prestamos (
 $host = '127.0.0.1';
 $db   = 'biblioteca';
 $user = 'root';
-$pass = '123456';
+$pass = '';
 
 ## Consideraciones
 - Todas las consultas usan sentencias preparadas.
