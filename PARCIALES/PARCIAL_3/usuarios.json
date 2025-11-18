@@ -1,0 +1,12 @@
+{
+    "1": {
+        "nombre": "Leo",
+        "contrasena": "mora2",
+        "rol": "profesor"
+    },
+    "2": {
+        "nombre": "Teo",
+        "contrasena": "estud",
+        "rol": "estudiante"
+    }
+}

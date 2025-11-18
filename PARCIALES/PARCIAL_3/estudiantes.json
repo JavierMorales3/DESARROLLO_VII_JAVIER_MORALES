@@ -1,0 +1,17 @@
+{
+    "1": {
+        "nombre_estudiante": "Teo",
+        "clase": "Matematicas",
+        "nota": 87
+    },
+    "2": {
+        "nombre_estudiante": "Mateo",
+        "clase": "Artes",
+        "nota": 95
+    },
+    "3": {
+        "nombre_estudiante": "Claudia",
+        "clase": "Ciencias Sociales",
+        "nota": 90
+    }
+}
